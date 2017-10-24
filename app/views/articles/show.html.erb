@@ -1,12 +1,14 @@
 <div id="article">
   <p>
     <strong>Title:</strong>
-    <div class="editable" src="<%= article_path(@article) %>" property="article[title]"><%= @article.title.html_safe%></div>
+    <div class="editable" src="<%=article_path(@article) %>" property="article[title]"><%= @article.title.html_safe%></div>
   </p>
   
   <p>
     <strong>Text:</strong>
-    <div class="editable" src="<%= article_path(@article) %>" property="article[text]"><%= @article.text.html_safe %></div>
+    <div class="editable" src="<%= article_path(@article) %>" property="article[text]">
+      <%= @article.text.html_safe %>
+    </div>
   </p>
 </div>
 <h2>Comments</h2>

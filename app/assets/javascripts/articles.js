@@ -4,11 +4,10 @@
  * where the data is sent.
  */
 var enableEditing = (nodeId) => {
-  alert("I am there");
-  alert(nodeId);
+  //alert("I am there");
+  //alert(nodeId);
   nodes = document.querySelector(nodeId).querySelectorAll('.editable')
   nodes.forEach( (node)=> {
-    alert(node)
     node.setAttribute('contentEditable', 'true')
     node.onfocus = () => {
       window.selectedEditor = node
@@ -30,10 +29,12 @@ var enableEditing = (nodeId) => {
 var saveData = (node) => {
   
   const url = node.getAttribute('src')
+  console.log(url);
   const data = new FormData()
   const request = new XMLHttpRequest();
   const csrfData = getCSRFParam()
   const editParam = node.getAttribute('property')
+  console.log("edit params" + node.innerHTML);
   data.append(editParam, node.innerHTML)
   data.append(csrfData.paramName, csrfData.token)
   request.open("PUT", url);

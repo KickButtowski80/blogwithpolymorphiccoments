@@ -6,7 +6,7 @@
 var enableEditing = (nodeId) => {
   //alert("I am there");
   //alert(nodeId);
-  nodes = document.querySelector(nodeId).querySelectorAll('.editable')
+  nodes = document.getElementById(nodeId).querySelectorAll('.editable')
   nodes.forEach( (node)=> {
     node.setAttribute('contentEditable', 'true')
     node.onfocus = () => {

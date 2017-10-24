@@ -16,13 +16,11 @@ function reply_click(node)
       <%= comment.commenter %>
   </p>
 
-  <strong>Comment:</strong>
-  
-  <p  class="editable"   src="<%= article_comment_url(commentable,comment) %>" property="comment[body]">
-    <%= comment.body.html_safe %>
-  </p>  
-  
-</div> 
+  <strong>Comment:</strong> 
+      <div  class="editable"   src="<%= article_comment_url(commentable,comment) %>" property="comment[body]">
+        <%= comment.body.html_safe%>
+      </div>    
+  </div> 
 <p>
     <%#= link_to 'Edit', [:edit, commentable, comment], data: { confirm: 'Are you sure?' } %>
     <!--<h1><%#= current_admin.user_name + " " + comment.commenter %></h1>-->

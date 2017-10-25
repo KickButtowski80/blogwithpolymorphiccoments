@@ -4,9 +4,11 @@
  * where the data is sent.
  */
 var enableEditing = (nodeId) => {
-  //alert("I am there");
-  //alert(nodeId);
-  nodes = document.getElementById(nodeId).querySelectorAll('.editable')
+  //alert(Number.isInteger(parseInt(nodeId)));
+  if(Number.isInteger(parseInt(nodeId)))
+    nodes = document.getElementById(nodeId).querySelectorAll('.editable')
+  else
+    nodes = document.querySelector(nodeId).querySelectorAll('.editable')
   nodes.forEach( (node)=> {
     node.setAttribute('contentEditable', 'true')
     node.onfocus = () => {

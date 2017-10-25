@@ -11,6 +11,7 @@
     </div>
   </p>
 </div>
+<input type="button" onclick="enableEditing('#article')" value="Edit Article"></input>
 <h2>Comments</h2>
 <!--This will now render the partial in app/views/comments/_comment.html.erb -->
 <!--once for each comment that is in the @article.comments-->
@@ -24,7 +25,7 @@
   
 <h2>Add a comment:</h2>
 <%= render partial: 'comments/form', locals: {commentable: @article} %>
-<input type="button" onclick="enableEditing('#article')" value="Edit"></input>
+
 <%# <%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'All Articles', controller: 'articles', action: 'index' %>
 <%= render partial: 'shared/edit-toolbar', locals: {commentable: @article} %>

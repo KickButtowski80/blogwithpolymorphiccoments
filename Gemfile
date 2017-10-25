@@ -57,3 +57,4 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
+gem 'jekyll-babel'

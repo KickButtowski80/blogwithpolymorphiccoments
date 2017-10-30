@@ -12,7 +12,7 @@
   </p>
   <p>
   <%#= @article.admin_id %>
-   published by <%= Article.find_by_admin_id(@article.admin_id).admin.user_name  %>
+   published by <%= Article.find_by(admin_id: @article.admin_id).admin.user_name  %>
    
   </p>
 </div>

@@ -21,7 +21,13 @@ class ArticlesController < ApplicationController
     #render plain: params[:article].inspect
     #params[:article] contains the attributes 
     #we're interested in
+    #@artilce.admin_id = current_admin.id
     @article = Article.new(article_params)
+    if current_admin
+      @article.admin_id = current_admin.id 
+    else
+      render 'new'
+    end
     if @article.save
       redirect_to @article
     else
@@ -56,6 +62,6 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title,:text)
+      params.require(:article).permit(:admin_id,:title,:text)
     end
 end

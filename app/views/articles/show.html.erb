@@ -10,6 +10,11 @@
       <%= @article.text.html_safe %>
     </div>
   </p>
+  <p>
+  <%#= @article.admin_id %>
+   published by <%= Article.find_by_admin_id(@article.admin_id).admin.user_name  %>
+   
+  </p>
 </div>
 <input type="button" onclick="enableEditing('#article')" value="Edit Article"></input>
 <h2>Comments</h2>
@@ -29,3 +34,4 @@
 <%# <%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'All Articles', controller: 'articles', action: 'index' %>
 <%= render partial: 'shared/edit-toolbar', locals: {commentable: @article} %>
+

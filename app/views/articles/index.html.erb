@@ -9,11 +9,16 @@
   <% @articles.each do |article| %>
     <tr>
       <td><%= link_to article.title, article_path(article) %></td>
-      <td><%= article.text.html_safe %></td>
+      <!--<td><%#= article.text.html_safe %></td>-->
       <td><%#= link_to 'edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+      <% if Article.find_by(admin_id: article.admin_id).admin== current_admin %>
+        <td><%= link_to 'Delete', article_path(article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+        </td>
+      <%end%>  
+      <td>
+        published by <%= Article.find_by(admin_id: article.admin_id).admin.user_name  %>
       </td>
     </tr>
   <% end %>

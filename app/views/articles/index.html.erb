@@ -18,7 +18,7 @@
         </td>
       <%end%>  
       <td>
-        published by <%= Article.find_by(admin_id: article.admin_id).admin.user_name  %>
+        published by <%= Article.find_by(admin_id: article.admin_id).admin.user_name if current_admin %>
       </td>
     </tr>
   <% end %>

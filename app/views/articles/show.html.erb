@@ -16,7 +16,9 @@
    
   </p>
 </div>
-<input type="button" onclick="enableEditing('#article')" value="Edit Article"></input>
+<% if Article.find_by(admin_id: @article.admin_id).admin== current_admin %>
+  <input type="button" onclick="enableEditing('#article')" value="Edit Article"></input>
+<%end%>  
 <h2>Comments</h2>
 <!--This will now render the partial in app/views/comments/_comment.html.erb -->
 <!--once for each comment that is in the @article.comments-->

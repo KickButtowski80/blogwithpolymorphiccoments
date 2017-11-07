@@ -46,6 +46,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -57,3 +58,4 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
+ 

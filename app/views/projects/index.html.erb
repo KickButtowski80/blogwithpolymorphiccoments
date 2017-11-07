@@ -1,0 +1,7 @@
+<h1>List of My Projects</h1>
+ 
+<% @projects.each do |p| %>
+    <div>name : <%= p.name %></div>
+    <div> description: <%= p.description %></div>
+<%end%>
+<%= link_to "Go Back 2 Main Page", root_path() %>

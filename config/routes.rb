@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'projects/index'
+  
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+  
+  resources :projects, only: [:index]
 
   devise_for :admins 
   resources :articles do

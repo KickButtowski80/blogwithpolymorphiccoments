@@ -19,8 +19,10 @@
       <%end%>  
       <td>
         published by <%= Article.find_by(admin_id: article.admin_id).admin.user_name if current_admin %>
-        at <%= Time.current.strftime("%Y-%m-%d %H:%M:%S") %>
+        <!--.strftime("%Y-%m-%d %H:%M:%S")-->
+        at <%= Article.find_by(id: article.id).created_at.strftime("%Y-%m-%d %H:%M:%S") %>
       </td>
     </tr>
   <% end %>
 </table>
+<%= link_to "Go Back 2 Main Page", root_path() %>

@@ -1,14 +1,15 @@
 
 <% if admin_signed_in?%>
-    <h1>Hello, <%=current_admin.user_name%>!</h1>    
+    <h1>Hello, <%=current_admin.user_name%>!</h1>   
+    <ol>
+        <li><%= link_to 'My Blog', controller: 'articles' if admin_signed_in? %></li>
+        <li><%= link_to 'My Projects', controller: 'projects' if admin_signed_in? %></li>
+    </ol>
 <%else%>
     <h1>Hello, Guest</h1>
     <h5>please sign in to take advantage of this website in the best way</h5>
 <%end%>
-<ol>
-    <li><%= link_to 'My Blog', controller: 'articles' if admin_signed_in? %></li>
-    <li><%= link_to 'My Projects', controller: 'projects' if admin_signed_in? %></li>
-</ol>
+
 
 
 

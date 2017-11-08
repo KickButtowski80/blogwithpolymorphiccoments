@@ -13,7 +13,7 @@
   <p>
   <%#= @article.admin_id %>
    published by <%= Article.find_by(admin_id: @article.admin_id).admin.user_name  %>
-   at <%= Article.find_by(id: article.id).created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+   at <%= Article.find_by(id: @article.id).created_at.strftime("%Y-%m-%d %H:%M:%S") %>
    
   </p>
 </div>

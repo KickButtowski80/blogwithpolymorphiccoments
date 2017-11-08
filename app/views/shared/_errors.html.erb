@@ -1,0 +1,14 @@
+<% if  @comment.errors.any? %>
+    <div class="flash error">
+        <h2>
+            <strong>
+                <%= pluralize( @comment.errors.count, "error") %> prohibited this commment from being saved:
+            </strong>
+        </h2>
+        <ul>
+            <%  @comment.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

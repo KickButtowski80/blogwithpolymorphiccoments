@@ -1,13 +1,21 @@
-<%= form_with(model: [commentable, Comment.new],local: true) do |form| %>
-<%#= form_with model: commentable, local: true do |form| %>
-  <!--<p >-->
-  <!--  <%#= form.label :commenter %><br>-->
-  <!--  <%#= form.text_field :commenter%>-->
-  <!--</p>-->
-   <!--contenteditable: "true"-->
+<% comments = commentable.comments.build %>
+<%= form_with(model: [commentable, comments],local: true) do |form| %>
+<div>
+  <% if comments.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+    <%= pluralize(comments.errors.count, "error") %> prohibited this comment from being saved:</h2>
+        <ul>
+          <% comments.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.label :body %><br>    
+    <%= form.text_area :body  %>
   </p>
   <p>
     <%= form.submit %>

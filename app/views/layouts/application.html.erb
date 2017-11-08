@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
+    <p class="notice"><%=raw notice %></p>
     <p class="alert"><%= alert %></p>
     <%unless admin_signed_in? %>
         <%= link_to 'Sing in', new_admin_session_path() %>

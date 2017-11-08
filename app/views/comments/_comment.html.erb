@@ -1,12 +1,3 @@
-<script type="text/javascript">
-function reply_click(node)
-{
-    alert("i am clicked" + node );
-     nodes = document.getElementById(node).querySelectorAll('.editable')
-     nodes[0].setAttribute('contentEditable', 'true')
-}
-</script>
-
 <% commentable.comments.each do |comment| %>
 <!--<div class="comment">-->
 <div id="<%=comment.id%>">

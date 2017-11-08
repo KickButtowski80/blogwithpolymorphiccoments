@@ -12,7 +12,8 @@
 
 class Article < ApplicationRecord
     belongs_to :admin , optional: true
-    has_many :comments, as: :commentable , :dependent => :destroy   
-    #validates :admin, presence: true
+    has_many :comments, as: :commentable , :dependent => :destroy  , autosave: true 
     validates :title, presence: true, length:{ minimum: 5}
+    # validates_presence_of :comments, on: :body
+     
 end

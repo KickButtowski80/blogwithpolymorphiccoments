@@ -37,8 +37,9 @@ class CommentsController < ApplicationController
      else		
        format.json { render json: { error: error_response }.to_json, status: :unprocessible_entity }		
        format.html { flash[:error] = @comment.error unless flash[:error]; render :edit }		
-     end        		
-   end		
+     end    
+   end   
+ end		
  
     
 

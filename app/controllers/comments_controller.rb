@@ -27,8 +27,8 @@ class CommentsController < ApplicationController
      @comment = @commentable.comments.find(params[:id])		
     end		    end
      		     
-   def update		 +    
-     @comment = @commentable.comments.find(params[:id])		 +    
+   def update		    
+     @comment = @commentable.comments.find(params[:id])		  
      respond_to do |format|		
        if @comment.update_attributes(comment_params)		
          #redirect_to @comment.commentable, notice: "Comment was updated."		

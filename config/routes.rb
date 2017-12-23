@@ -5,9 +5,21 @@ Rails.application.routes.draw do
   
   resources :projects, only: [:index]
 
-  devise_for :admins 
+   devise_for :admins 
+  
+    # Rails.application.routes.draw do
+    # devise_for :admins, controllers: {
+    #   sessions: 'admins/sessions'
+    # }
+    # end
+  
+  
+  
+  
+  
   resources :articles do
     resources :comments 
   end 
+  
   root to: 'welcome#index'
 end

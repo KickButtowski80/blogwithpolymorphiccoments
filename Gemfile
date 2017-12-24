@@ -60,3 +60,6 @@ gem 'sprockets', '>=3.0.0.beta'
 gem 'sprockets-es6'
 #for actioncable
 gem 'redis', '~> 4.0', '>= 4.0.1'
+
+gem 'warden', '~> 1.2', '>= 1.2.6'
+gem 'pry'

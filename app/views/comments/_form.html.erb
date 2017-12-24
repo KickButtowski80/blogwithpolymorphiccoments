@@ -15,9 +15,9 @@
 </div>
   <p>
     <%= form.label :body %><br>    
-    <%= form.text_area :body  %>
+    <%= form.text_area :body ,id: "text_area_content" %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit 'data-behavior': "page_show_comment" %>
   </p>
 <% end %>

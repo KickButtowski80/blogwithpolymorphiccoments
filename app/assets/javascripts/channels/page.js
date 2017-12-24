@@ -18,6 +18,8 @@ $(document).ready( () => {
         received: function(data) {
           // you need to insert this content into the page. 
           //this.collection() doesn't exist 
+          //
+          //alert( data['message']);
           return  $("#comments").append(data['message']);
                  
         },
@@ -32,6 +34,7 @@ $(document).ready( () => {
     $(document).on('click', '[data-behavior~=page_show_comment]', function(event) {
       if ($.trim($('#text_area_content').val()).length > 1) {
         // debugger;
+        //alert("guess what I am here? yay!!!");
         App.page.show_comment(document.getElementById("text_area_content").value,article_id );
         collection.val($('#text_area_content').val());
         $('#text_area_content').val('');

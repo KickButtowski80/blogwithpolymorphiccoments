@@ -10,6 +10,7 @@ class CommentBroadcastJob < ApplicationJob
       # you can check all the vairalabes values in the console
       # binding.pry 
       # message.commentable  
-      ApplicationController.renderer.render(partial: 'comments/comment', locals: {commentable: message.commentable, message:message})
+      ApplicationController.render(partial: 'comments/comment', locals: {commentable: message.commentable, message:message})
+      
     end
 end

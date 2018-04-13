@@ -7,8 +7,8 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
-
+# gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -53,7 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pg'
-gem 'devise'
+gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1' 
 
 gem 'sprockets', '>=3.0.0.beta'
@@ -61,5 +61,5 @@ gem 'sprockets-es6'
 #for actioncable
 gem 'redis', '~> 4.0', '>= 4.0.1'
 
-gem 'warden', '~> 1.2', '>= 1.2.6'
+gem 'warden', '~> 1.2', '>= 1.2.7'
 gem 'pry'

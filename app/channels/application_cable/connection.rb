@@ -11,7 +11,7 @@ module ApplicationCable
 
     def find_verified_admin # this checks whether a admin is authenticated with devise
       
-      if verified_admin = env['warden'].admin
+      if verified_admin = Admin.find_by(id: cookies.signed['admin.id'])
         verified_admin
       else
         reject_unauthorized_connection

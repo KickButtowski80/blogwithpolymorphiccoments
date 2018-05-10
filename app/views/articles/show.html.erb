@@ -1,4 +1,5 @@
-<div id="article">
+<%= @article.id %>
+<div id="article" >
   <p>
     <strong>Title:</strong>
     <div class="editable" src="<%=article_path(@article) %>" property="article[title]"><%= @article.title.html_safe%></div>
@@ -29,7 +30,10 @@
 <!--partial, in this case comment which is then available -->
 <!--in the partial for us to show.-->
 <%#= render @article.comments %>
-<%= render partial: 'comments/comment', locals: {commentable: @article} %>
+<div id="comments" data-article-id="<%= @article.id %>">
+  <%= render partial: 'comments/comment', locals: {commentable: @article} %>
+</div>
+
   
 <h2>Add a comment:</h2>
 <%= render partial: 'comments/form', locals: {commentable: @article} %>
